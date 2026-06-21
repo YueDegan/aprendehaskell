@@ -2300,22 +2300,22 @@ La versión de ``:`` para cadenas de bytes se conoce como :cpp:member:`cons`. To
 byte y una cadena de bytes y pone dicho byte al principio. Aunque es perezosa,
 generará un nuevo bloque para ese elemento aunque dicho bloque aún no este
 lleno. Por este motivo es mejor utilizar la versión estricta de ``cons``,
-:cpp:member:`cons'`, si vas a insertar un montón de bytes al principio de una cadena
+:code:`cons'`, si vas a insertar un montón de bytes al principio de una cadena
 de bytes.
 
 .. code-block:: console
 
     ghci> B.cons 85 $ B.pack [80,81,82,84]  
     Chunk "U" (Chunk "PQRT" Empty)  
-    ghci> B.cons' 85 $ B.pack [80,81,82,84]  
+    ghci> B.cons' 85 $ B.pack [80,81,82,84]
     Chunk "UPQRT" Empty  
     ghci> foldr B.cons B.empty [50..60]  
     Chunk "2" (Chunk "3" (Chunk "4" (Chunk "5" (Chunk "6" (Chunk "7" (Chunk "8" (Chunk "9" (Chunk ":" (Chunk ";" (Chunk "<" Empty))))))))))  
-    ghci> foldr B.cons' B.empty [50..60]  
+    ghci> foldr B.cons' B.empty [50..60]
     Chunk "23456789:;<" Empty
     
 Como puedes ver :cpp:member:`empty` crea una cadena de bytes vacía ¿Puedes ver las
-diferencias entre ``cons`` y ``cons'``? Con ayuda de ``foldr`` hemos empezado
+diferencias entre ``cons`` y :code:`cons'`? Con ayuda de ``foldr`` hemos empezado
 con una cadena de bytes vacía y luego hemos recorrido la lista de números
 desde la derecha, añadiendo cada número al principio de la cadena de bytes.
 Cuando utilizamos ``cons``, acabamos con un bloque por cada byte, lo cual no
@@ -2520,7 +2520,7 @@ utilizarlas en este contexto. Un fichero que no existe es una excepción que
 se lanza desde la E/S, así que capturarla en la E/S es totalmente aceptable.
 
 Para tratar con esto utilizando excepciones, vamos a aprovecharnos de la
-función :cpp:member:`catch` de ``System.IO.Error``. Su declaración de tipo es
+función :code:`catch` de ``System.IO.Error``. Su declaración de tipo es
 ``catch :: IO a -> (IOError -> IO a) -> IO a``. Toma dos parámetros. El
 primero es una acción de E/S. Por ejemplo, podría ser una acción que trate de
 abrir un fichero. El segundo es lo que llamamos un manipulador. Si la primera

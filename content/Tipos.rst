@@ -148,7 +148,7 @@ Aquí tienes una descripción de los tipos más comunes:
 Las tuplas también poseen tipos pero dependen de su longitud y del tipo de sus
 componentes, así que teóricamente existe una infinidad de tipos de tuplas y
 eso son demasiados tipos como para cubrirlos en esta guía. La tupla vacía
-es también un tipo :cpp:type:`()` el cual solo puede contener un valor:
+es también un tipo :code:`()` el cual solo puede contener un valor:
 ``()``.
 
 
