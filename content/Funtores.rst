@@ -877,7 +877,7 @@ no tener un valor, así que ``pure`` está implementado usando ``Just``.
 
 ¿Qué pasa con ``<*>``? Si vemos el tipo de ``<*>`` como si estuviera limitado
 a las listas tendríamos algo como ``(<*>) :: [a -> b] -> [a] -> [b]``. Está
-implementado usado :ref:`listas por comprensión <comprension>`. ``<*>`` debe
+implementado usando `listas por comprensión`. ``<*>`` debe
 extraer de alguna forma la función que contiene el primer parámetro y mapearla
 sobre el segundo parámetro. El problema es que aquí puede haber una función,
 varias de ellas, o incluso ninguna. La lista de la derecha también puede
